@@ -60,10 +60,6 @@ spec:
       description: Path to a file with build arguments for buildah, see https://www.mankier.com/1/buildah-build#--build-arg-file
       name: build-args-file
       type: string
-    - default: "3"
-      type: string
-      name: task-retries
-      description: The number of retries of every pipeline task
   results:
     - name: IMAGE_URL
       value: $(tasks.build-container.results.IMAGE_URL)
@@ -75,7 +71,7 @@ spec:
       value: $(tasks.clone-repository.results.commit)
   tasks:
     - name: init
-      retries: $(params.task-retries)
+      retries: 3
       params:
         - name: image-url
           value: $(params.output-image)
@@ -84,7 +80,7 @@ spec:
       taskRef:
         name: init
     - name: clone-repository
-      retries: $(params.task-retries)
+      retries: 3
       params:
         - name: url
           value: $(params.git-url)
@@ -105,7 +101,7 @@ spec:
         - name: basic-auth
           workspace: git-auth
     - name: build-container
-      retries: $(params.task-retries)
+      retries: 3
       params:
         - name: IMAGE
           value: $(params.output-image)
