@@ -1,19 +1,12 @@
 # AI-RHDH Standard Pipelines
 
 These pipelines are in standard [tekton](https://tekton.dev/docs/) format.
-They can be found in ./pac/pipelines and ./pac/tasks.
+They can be found in [./pac/pipelines](./pac/pipelines/) and [./pac/tasks](./pac/tasks/).
 
 This pipeline was forked and customized from the RHTAP [pipeline definition](https://github.com/redhat-appstudio/tssc-sample-pipelines) and plans to act standalone from RHTAP.
 
 ## Backstage
 
-Modify the template placeholders to match your backstage template vars
-Note, PaC also has `{{variables}}` and you should not modify those.
+Modify the template placeholders to match your Backstage template variables. 
 
-   - `{{values.appName}} -> ${{ values.appName }}`
-   - `{{values.dockerfileLocation}}-> ${{ values.dockerfileLocation }} `
-   - `{{values.namespace}}-> ${{ values.namespace }} `
-   - `{{values.image}}-> ${{ values.image }} `
-   - `{{values.namespace}}-> ${{ values.namespace }} `
-   - `{{values.buildContext}}-> ${{ values.buildContext }} `
-   - `{{values.repoURL}}-> ${{values.repoURL}}`
+For example, `{{values.rawUrl}}` and `{{ values.image }}` gets updated by the [ai-lab-template repository](https://github.com/redhat-ai-dev/ai-lab-template) script [update-tekton-definition](https://github.com/redhat-ai-dev/ai-lab-template/blob/33bda4738a82d71360ec98e111d16624e3392910/scripts/update-tekton-definition#L22-L23).
