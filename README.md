@@ -1,9 +1,9 @@
 # AI-RHDH Standard Pipelines
 
-These pipelines are in standard [tekton](https://tekton.dev/docs/) format.
-They can be found in [./pac/pipelines](./pac/pipelines/) and [./pac/tasks](./pac/tasks/).
+The Pipelines are in standard [tekton](https://tekton.dev/docs/) format and
+they can be found in [./pac/pipelines](./pac/pipelines/), whereas the Tasks are located in [./pac/tasks](./pac/tasks/).
 
-This pipeline was forked and customized from the RHTAP [pipeline definition](https://github.com/redhat-appstudio/tssc-sample-pipelines) and plans to act standalone from RHTAP.
+This pipeline repository was forked and customized from the RHTAP [pipeline definition](https://github.com/redhat-appstudio/tssc-sample-pipelines) and plans to act standalone from RHTAP.
 
 ## Backstage
 
